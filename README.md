@@ -53,7 +53,7 @@ Omarchy generates every app's theme from `colors.toml`; the theme ships its own 
 - `icons.theme`: Yaru-prussiangreen-dark, a teal to match the borders.
 - `unlock.png`: a glowing torii gate for the boot screen. Apply it with `omarchy-plymouth-set-by-theme toro-nagashi`.
 - `preview.png`, `preview-unlock.png`: the theme picker images.
-- `backgrounds/`: the river temple painting, sky lanterns rising over a lake ([UHDPaper #6015s](https://www.uhdpaper.com/search?q=lantern&by-date=true)), and a forest shrine at dusk by Jeff Qu Liu ([pixiv](https://www.pixiv.net/en/artworks/141281439), via [Wallhaven je1wgp](https://wallhaven.cc/w/je1wgp)), with a soft fade under the bar. Cycle them with `omarchy theme bg next`.
+- `backgrounds/`: the river temple painting, sky lanterns rising over a lake ([UHDPaper #6015s](https://www.uhdpaper.com/search?q=lantern&by-date=true)), and red paper lanterns strung over a summer harbour ([Wallhaven 6kkl86](https://wallhaven.cc/w/6kkl86)). Cycle them with `omarchy theme bg next`.
 
 ### Editors
 
