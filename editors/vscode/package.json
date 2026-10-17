@@ -1,0 +1,22 @@
+{
+  "name": "toro-nagashi-theme",
+  "displayName": "Toro Nagashi",
+  "description": "Toro Nagashi dark theme: lanterns on a river at dusk, with One Monokai-style syntax",
+  "version": "1.0.0",
+  "publisher": "ohmylucifer",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Toro Nagashi",
+        "uiTheme": "vs-dark",
+        "path": "./toro-nagashi-color-theme.json"
+      }
+    ]
+  }
+}

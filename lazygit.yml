@@ -1,0 +1,40 @@
+# Toro Nagashi lazygit colours. Copied to ~/.config/lazygit/theme.yml by the
+# theme-set hook (~/.config/omarchy/hooks/theme-set.d/lazygit), which lazygit
+# reads through LG_CONFIG_FILE.
+gui:
+  theme:
+    # The focused panel takes the sky teal of the window border; the rest
+    # sit in slate, still visible (3:1) but clearly behind.
+    activeBorderColor:
+      - "#4CB0C0"
+      - bold
+    inactiveBorderColor:
+      - "#4D697C"
+    searchingActiveBorderColor:
+      - "#F7C655"
+      - bold
+    optionsTextColor:
+      - "#7EA5DE"
+    selectedLineBgColor:
+      - "#1A4150"
+    inactiveViewSelectedLineBgColor:
+      - "#182733"
+    cherryPickedCommitFgColor:
+      - "#0F1B25"
+    cherryPickedCommitBgColor:
+      - "#4CB0C0"
+    markedBaseCommitFgColor:
+      - "#0F1B25"
+    markedBaseCommitBgColor:
+      - "#F7C655"
+    unstagedChangesColor:
+      - "#FE7B73"
+    defaultFgColor:
+      - "#D5E2E8"
+  authorColors:
+    "*": "#D689CF"
+  branchColorPatterns:
+    "^(main|master)$": "#4CB0C0"
+    "^(feat|feature)/": "#63B37B"
+    "^(fix|hotfix)/": "#FE7B73"
+    ".*": "#E88C50"

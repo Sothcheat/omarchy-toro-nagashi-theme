@@ -1,0 +1,62 @@
+# Toro Nagashi — a dark theme drawn from a painting of a mountain temple at
+# dusk: paper lanterns along a stone path, their light running red down a
+# river, crimson maple leaves overhead, snow on the far peak catching the last
+# rose-coloured light under a deep teal sky.
+#
+# Surfaces are the night forest itself, the navy-teal sampled at #0F1B25,
+# kept blue rather than neutral. Text is the pale mist of the robe and sky
+# haze. The accent is the lantern light: the one warm thing in a cold scene.
+#
+# Hues sampled from the painting: lantern paper #DC5458 (red), lantern core
+# #FD9567 (orange), snowcap rose #E29098 (bright red), sky teal #348597
+# (cyan), slate mountain shadow #57768B (muted, and blue, rotated off cyan),
+# maple leaves #601D39 / #5D324A (magenta), temple wood and stone steps
+# (brown). The painting has no true green or yellow — its "greens" are all
+# teal — so green is a jade moss set well away from the teal, and yellow is
+# the candle flame inside the lanterns.
+#
+# Lightness is solved in OKLCH against `lighter_background`, the lightest
+# surface any colour lands on, taking the darkest value that clears the
+# target so colours stay rich. Every ANSI colour clears 6.0:1 (brown, kept
+# dim on purpose, 4.6:1), bright variants clear 9.5:1, and foregrounds run
+# 6.5:1 to 13.8:1. No two different hues are closer than 15.8 CIEDE2000, and
+# each bright sits 11+ from its normal, so nothing blends into a neighbour.
+mode = "dark"
+
+accent = "#FE7B73"
+selection = "#1A4150"
+muted = "#6A879B"
+
+# Window borders sit quieter than the accent: the focused window runs from
+# the sky teal (#348597, sampled, 4.1:1 on the background) down into the
+# maple leaves (#601D39 lifted to #B64F77, 3.6:1), the way the painting goes
+# from sky to canopy. The rest get the dark slate of the far ridges. The
+# lantern red stays for the bar and menus.
+hyprland_active_border = "rgb(348597) rgb(b64f77) 45deg"
+hyprland_inactive_border = "rgba(2d3747aa)"
+
+background = "#0F1B25"
+dark_background = "#0A141C"
+darker_background = "#050D14"
+lighter_background = "#182733"
+
+foreground = "#D5E2E8"
+dark_foreground = "#96ADB8"
+light_foreground = "#BFCFD6"
+bright_foreground = "#EDF5F9"
+
+red = "#FE7B73"
+yellow = "#C99C31"
+orange = "#E88C50"
+green = "#63B37B"
+cyan = "#4CB0C0"
+blue = "#7EA5DE"
+magenta = "#D689CF"
+brown = "#A5886F"
+
+bright_red = "#FFBBC1"
+bright_yellow = "#F7C655"
+bright_green = "#7FE19C"
+bright_cyan = "#65DDF1"
+bright_blue = "#AECFFF"
+bright_magenta = "#FFB4F7"

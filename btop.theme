@@ -1,0 +1,60 @@
+# Toro Nagashi btop theme. Box outlines are dimmed palette colours (each
+# 3.5:1+ on the background) so panels stay apart without glaring; graphs run
+# the painting's light from cool to warm, sky teal to lantern red.
+
+theme[main_bg]="#0F1B25"
+theme[main_fg]="#D5E2E8"
+theme[title]="#EDF5F9"
+theme[hi_fg]="#FE7B73"
+theme[selected_bg]="#1A4150"
+theme[selected_fg]="#EDF5F9"
+theme[inactive_fg]="#6A879B"
+theme[graph_text]="#BFCFD6"
+theme[meter_bg]="#182733"
+theme[proc_misc]="#4CB0C0"
+
+# Panel outlines: sky teal, maple, slate blue, temple wood.
+theme[cpu_box]="#348597"
+theme[mem_box]="#B64F77"
+theme[net_box]="#5C7FB0"
+theme[proc_box]="#8C7158"
+theme[div_line]="#2D4558"
+
+# Temperature: cool sky, candle flame, lantern.
+theme[temp_start]="#4CB0C0"
+theme[temp_mid]="#F7C655"
+theme[temp_end]="#FE7B73"
+
+# CPU: sky teal, snowcap rose, lantern.
+theme[cpu_start]="#4CB0C0"
+theme[cpu_mid]="#E29098"
+theme[cpu_end]="#FE7B73"
+
+theme[free_start]="#63B37B"
+theme[free_mid]="#4CB0C0"
+theme[free_end]="#65DDF1"
+
+theme[cached_start]="#5C7FB0"
+theme[cached_mid]="#7EA5DE"
+theme[cached_end]="#AECFFF"
+
+theme[available_start]="#C99C31"
+theme[available_mid]="#E88C50"
+theme[available_end]="#F7C655"
+
+theme[used_start]="#B64F77"
+theme[used_mid]="#D689CF"
+theme[used_end]="#FE7B73"
+
+# Network: down is the river teal, up is the maple rising.
+theme[download_start]="#348597"
+theme[download_mid]="#4CB0C0"
+theme[download_end]="#65DDF1"
+
+theme[upload_start]="#B64F77"
+theme[upload_mid]="#D689CF"
+theme[upload_end]="#FFB4F7"
+
+theme[process_start]="#4CB0C0"
+theme[process_mid]="#E29098"
+theme[process_end]="#FE7B73"
