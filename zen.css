@@ -53,12 +53,15 @@
   --zen-sidebar-themed-icon-fill: #96adb8 !important;
   --attention-dot-color: #fe7b73 !important;
 
-  /* Buttons on internal pages (settings, dialogs). */
-  --in-content-primary-button-background: #2c7385 !important;
-  --in-content-primary-button-background-hover: #348597 !important;
-  --in-content-primary-button-background-active: #1a4150 !important;
-  --in-content-primary-button-text-color: #edf5f9 !important;
-  --button-text-color-primary: #edf5f9 !important;
+  /* Primary buttons: sky teal with navy text (6.9:1). The text stays dark
+   * because dialogs (default-browser prompt, confirmations) live in their
+   * own document, where Zen paints the primary button light grey and
+   * userChrome.css can't reach the button; dark text reads on both. */
+  --in-content-primary-button-background: #4cb0c0 !important;
+  --in-content-primary-button-background-hover: #65c3d1 !important;
+  --in-content-primary-button-background-active: #348597 !important;
+  --in-content-primary-button-text-color: #0f1b25 !important;
+  --button-text-color-primary: #0f1b25 !important;
   --link-color: #4cb0c0 !important;
   --link-color-hover: #65ddf1 !important;
 }
