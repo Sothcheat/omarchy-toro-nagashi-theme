@@ -84,10 +84,75 @@
   --tab-background-color-selected: #1a4150 !important;
 }
 
-.tabbrowser-tab:is([selected], [visuallyselected], [multiselected="true"]) > .tab-stack > .tab-background {
+.tabbrowser-tab:not([zen-essential="true"]):is([selected], [visuallyselected], [multiselected="true"]) > .tab-stack > .tab-background {
   background: #1a4150 !important;
 }
 
-.tabbrowser-tab:hover:not([selected], [visuallyselected], [multiselected="true"]) > .tab-stack > .tab-background {
+.tabbrowser-tab:not([zen-essential="true"]):hover:not([selected], [visuallyselected], [multiselected="true"]) > .tab-stack > .tab-background {
   background: #17303d !important;
+}
+
+/* Controls sitting on the sidebar (the URL bar, essential tiles) get a raised
+ * navy fill with a slate edge, 2.6:1 against the sidebar, instead of Zen's
+ * text-tinted wash, which all but vanished on the dark navy. */
+:root {
+  --zen-toolbar-element-bg: #18293a !important;
+  --zen-toolbar-element-bg-hover: #1f3546 !important;
+}
+
+/* Sidebar URL bar. */
+#urlbar:not([breakout-extend]) .urlbar-background {
+  background: #18293a !important;
+  border: 1px solid #3a5a70 !important;
+}
+#urlbar:not([breakout-extend]):hover .urlbar-background {
+  background: #1f3546 !important;
+}
+#urlbar .urlbar-input {
+  color: #d5e2e8 !important;
+}
+#urlbar .urlbar-input::placeholder {
+  color: #7f9bae !important;
+  opacity: 1 !important;
+}
+
+/* Floating URL bar (the search box over a new tab). */
+#urlbar .urlbar-background {
+  --zen-urlbar-background-base: #142330 !important;
+  --zen-urlbar-background-transparent: rgba(20, 35, 48, 0.97) !important;
+}
+#urlbar[breakout-extend] .urlbar-background {
+  outline: 1px solid #3a5a70 !important;
+}
+#urlbar[breakout-extend][focused="true"] .urlbar-background {
+  outline-color: #348597 !important;
+}
+
+/* Essentials: tiles on the raised fill; the open one in teal. */
+.tabbrowser-tab[zen-essential="true"] {
+  --zen-essential-tab-selected-bg: #1f4a5a !important;
+  --zen-essential-tab-selected-bg-hover: #245668 !important;
+}
+.tabbrowser-tab[zen-essential="true"]:not([visuallyselected], [multiselected="true"]) > .tab-stack > .tab-background {
+  background: #18293a !important;
+  box-shadow: inset 0 0 0 1px #3a5a70 !important;
+}
+.tabbrowser-tab[zen-essential="true"]:hover:not([visuallyselected], [multiselected="true"]) > .tab-stack > .tab-background {
+  background: #1f3546 !important;
+}
+.tabbrowser-tab[zen-essential="true"]:is([visuallyselected], [multiselected="true"]) > .tab-stack > .tab-background {
+  box-shadow: inset 0 0 0 1px #348597 !important;
+}
+
+/* While the URL bar floats over the page, the sidebar keeps an empty
+ * placeholder where it was; draw it like the bar itself. */
+#urlbar-container:has(#urlbar[open][zen-floating-urlbar="true"]) {
+  background: #18293a !important;
+  box-shadow: inset 0 0 0 1px #3a5a70 !important;
+}
+
+/* The floating bar and its results: solid, so the page doesn't show through. */
+#urlbar[breakout-extend] .urlbar-background {
+  background-color: #142330 !important;
+  backdrop-filter: none !important;
 }
