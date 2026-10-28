@@ -68,6 +68,7 @@ Omarchy generates every app's theme from `colors.toml`; the theme ships its own 
 | Strings | candle gold |
 | Numbers, template `${}` | maple magenta |
 | Parameters | lantern orange, italic |
+| Properties, object keys | snowcap rose |
 | `this` / `self` | lantern red, italic |
 | Comments | slate, italic |
 

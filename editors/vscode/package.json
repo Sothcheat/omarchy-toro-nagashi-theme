@@ -2,7 +2,7 @@
   "name": "toro-nagashi-theme",
   "displayName": "Toro Nagashi",
   "description": "Toro Nagashi dark theme: lanterns on a river at dusk, with One Monokai-style syntax",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "ohmylucifer",
   "engines": {
     "vscode": "^1.80.0"

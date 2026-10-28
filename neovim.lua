@@ -18,7 +18,8 @@ return {
       --   numbers, escapes            maple magenta
       --   parameters                  lantern orange, italic
       --   self / this                 lantern red, italic
-      --   variables, properties       mist
+      --   properties, object keys     snowcap rose
+      --   variables                   mist
       styles = {
         comments = { italic = true },
         keywords = {},
@@ -35,6 +36,7 @@ return {
         local param = { fg = c.orange, italic = true }
         local self = { fg = c.red, italic = true }
         local plain = { fg = c.fg }
+        local prop = { fg = "#FF9CB3" }
         local punct = { fg = c.dark_fg }
 
         local function set(groups, style)
@@ -63,8 +65,8 @@ return {
           "@punctuation.special", "SpecialChar" }, number)
         set({ "@variable.parameter", "@variable.parameter.builtin", "@lsp.type.parameter" }, param)
         set({ "@variable.builtin", "@lsp.typemod.variable.defaultLibrary" }, self)
-        set({ "Identifier", "@variable", "@variable.member", "@property", "@lsp.type.property",
-          "@lsp.type.variable" }, plain)
+        set({ "Identifier", "@variable", "@lsp.type.variable" }, plain)
+        set({ "@variable.member", "@property", "@lsp.type.property" }, prop)
         set({ "Delimiter", "@punctuation", "@punctuation.bracket", "@punctuation.delimiter",
           "@tag.delimiter" }, punct)
         hl.Special = storage

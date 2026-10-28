@@ -18,8 +18,9 @@ no two kinds of token read alike, with Toro Nagashi colours in each slot:
     numbers, template ${}           maple magenta   (purple)
     parameters                      lantern orange, italic
     this / self                     lantern red, italic
+    properties, object keys         snowcap rose (One Dark gives them a hue too)
     comments                        slate, italic
-    variables, properties           mist (plain text)
+    variables                       mist (plain text)
 
 The UI keeps lantern red for errors only; focus, selection and the active tab
 use the sky teal, as the Omarchy shell does.
@@ -44,6 +45,10 @@ C = {
     "comment": P["muted"],
     "punct": P["dark_foreground"],
     "var": FG,
+    # Snowcap rose, lifted (OKLCH 0.80 0.13 5): 8.9:1 on bg, 14.1 dE from
+    # keywords and 15.4 from numbers. The sampled #E29098 sits too near the
+    # lantern red.
+    "property": "#FF9CB3",
 }
 UI = {
     "bg": BG,
@@ -505,15 +510,16 @@ def vscode_token_colors():
         scope(["variable.parameter", "meta.parameter variable", "entity.name.variable.parameter",
                "variable.parameter.function"], c["param"], "italic"),
 
-        # Variables, properties: plain mist; punctuation dimmer.
-        scope(["variable", "variable.other", "variable.other.readwrite", "variable.other.property",
-               "variable.other.object.property", "meta.object-literal.key", "support.variable.property",
-               "entity.name.variable", "variable.other.constant.property"], c["var"]),
+        # Variables: plain mist. Properties and object keys: snowcap rose.
+        # Punctuation dimmer.
+        scope(["variable", "variable.other", "variable.other.readwrite", "entity.name.variable"], c["var"]),
+        scope(["variable.other.property", "variable.other.object.property", "meta.object-literal.key",
+               "support.variable.property", "variable.other.constant.property"], c["property"]),
         scope(["punctuation", "meta.brace", "punctuation.separator", "punctuation.terminator",
                "punctuation.accessor", "meta.delimiter"], c["punct"]),
 
         # CSS
-        scope(["support.type.property-name.css", "support.type.vendored.property-name"], c["var"]),
+        scope(["support.type.property-name.css", "support.type.vendored.property-name"], c["property"]),
         scope(["entity.other.attribute-name.class.css", "entity.other.attribute-name.id.css",
                "entity.other.attribute-name.pseudo-class", "entity.other.attribute-name.pseudo-element"],
               c["function"]),
@@ -562,9 +568,9 @@ def vscode_semantic():
         "parameter": {"foreground": c["param"], "italic": True},
         "variable": c["var"],
         "variable.readonly.defaultLibrary": c["storage"],
-        "property": c["var"],
+        "property": c["property"],
         "enumMember": c["storage"],
-        "event": c["var"],
+        "event": c["property"],
         "label": c["string"],
         "selfKeyword": {"foreground": c["keyword"], "italic": True},
         "*.deprecated": {"strikethrough": True},
@@ -583,7 +589,7 @@ def build_vscode(out):
         "semanticTokenColors": vscode_semantic(),
     }
     (out / "toro-nagashi-color-theme.json").write_text(json.dumps(theme, indent=2) + "\n")
-    version = "1.0.0"
+    version = "1.0.1"
     pkg = {
         "name": "toro-nagashi-theme",
         "displayName": "Toro Nagashi",
@@ -706,7 +712,7 @@ def zed_syntax():
         "function.kwargs": hl(c["param"], "italic"),
         "label": hl(c["string"]),
         "variable": hl(c["var"]),
-        "property": hl(c["var"]),
+        "property": hl(c["property"]),
         "punctuation": hl(c["punct"]),
         "punctuation.bracket": hl(c["punct"]),
         "punctuation.delimiter": hl(c["punct"]),
